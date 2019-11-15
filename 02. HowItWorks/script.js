@@ -107,3 +107,39 @@ var mike = {
 mike.calculateAge = john.calculateAge;
 mike.calculateAge();
 */
+
+//this keyword
+//console.log(this);
+
+/*calculateAge(1984);
+
+function calculateAge(year) {
+  console.log(2019 - year);
+  console.log(this);
+}
+*/
+
+var john = {
+  name: "Jim",
+  birthYear: 1984,
+  calculateAge: function() {
+    console.log(this);
+    console.log(2019 - this.birthYear);
+    /* 
+    function innerFunction() {
+      console.log(this);
+    }
+    innerFunction();
+    */
+  }
+};
+
+john.calculateAge();
+
+var mark = {
+  name: "Mike",
+  birthYear: 1985
+};
+
+mark.calculateAge = john.calculateAge;
+mark.calculateAge();
